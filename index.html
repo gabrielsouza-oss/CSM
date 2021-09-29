@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link href="https://bootswatch.com/5/superhero/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	
+	<link rel="shortcut icon" href="https://atomusinvest.com.br/resources/favicon.ico">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+
+    <title>ESTI019-17SA - Projetos de Laboratório</title>
+	<style>
+		.border-2 {
+			border-width:2px !important;
+		}
+		.card:hover{
+			transition: transform .8s !important;
+			transform: scale(1.02) !important;
+			box-shadow: 10px 10px 5px #aaaaaa !important;
+		}
+		.foto:hover {
+			transition: transform .6s !important;
+			transform: scale(1.07) !important;
+		}
+		.about p {
+			text-align: justify;
+		}
+		.nav-item a:hover, .blue-hover:hover{
+			transition: transform .7s !important;
+			color:#47b2e4!important;
+		}
+		.btn{
+			border-radius:5px;
+		}
+		.canva-img{
+			border-radius:50px;
+			box-shadow: 10px 10px 5px #000000;
+		}
+		.loader-wrapper {
+		  position: fixed;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  width: 100%;
+		  height: 100%;
+		  top: 0;
+		  left: 0;
+		  background-color: #e5e5e5;
+		  z-index: 9999;
+		}
+		svg {
+		  position: fixed;
+		  top: 50%;
+		  left: 50%;
+		  -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(1);
+				  transform: translate(-50%, -50%) rotate(45deg) scale(1);
+		}
+
+		.stroke-still {
+		  stroke: #232323;
+		}
+
+		.stroke-animation {
+		  -webkit-animation: stroke-spacing 1.2s ease-in, stroke-color 4.8s linear;
+				  animation: stroke-spacing 1.2s ease-in, stroke-color 4.8s linear;
+		  -webkit-animation-iteration-count: infinite;
+				  animation-iteration-count: infinite;
+		  -webkit-animation-delay: 0;
+				  animation-delay: 0;
+		  -webkit-animation-direction: normal;
+				  animation-direction: normal;
+		  -webkit-animation-fill-mode: forwards;
+				  animation-fill-mode: forwards;
+		  -webkit-animation-play-state: running;
+				  animation-play-state: running;
+		  -webkit-transform-origin: center center;
+				  transform-origin: center center;
+		}
+
+		@-webkit-keyframes stroke-spacing {
+		  0% {
+			stroke-dasharray: 0 200;
+		  }
+		  45% {
+			stroke-dashoffset: 0;
+			stroke-dasharray: 200 200;
+		  }
+		  90% {
+			stroke-dashoffset: -200;
+			stroke-dasharray: 200 200;
+		  }
+		  100% {
+			stroke-dashoffset: -200;
+			stroke-dasharray: 200 200;
+		  }
+		}
+
+		@keyframes stroke-spacing {
+		  0% {
+			stroke-dasharray: 0 200;
+		  }
+		  45% {
+			stroke-dashoffset: 0;
+			stroke-dasharray: 200 200;
+		  }
+		  90% {
+			stroke-dashoffset: -200;
+			stroke-dasharray: 200 200;
+		  }
+		  100% {
+			stroke-dashoffset: -200;
+			stroke-dasharray: 200 200;
+		  }
+		}
+
+		@-webkit-keyframes stroke-color {
+		  0%  { stroke: #3498DB; }
+		  24% { stroke: #643232; }
+		  25% { stroke: #327864; }
+		  49% { stroke: #327864; }
+		  50% { stroke: #32326e; }
+		  74% { stroke: #32326e; }
+		  75% { stroke: #78325a; }
+		  99% { stroke: #78325a; }
+		}
+
+		@keyframes stroke-color {
+		  0%  { stroke: #3498DB; }
+		  24% { stroke: #643232; }
+		  25% { stroke: #327864; }
+		  49% { stroke: #327864; }
+		  50% { stroke: #32326e; }
+		  74% { stroke: #32326e; }
+		  75% { stroke: #78325a; }
+		  99% { stroke: #78325a; }
+		}
+
+	</style>
+  </head>
+  <body>
+  
+	<div class="loader-wrapper">
+		<svg width="200" height="200" viewBox="0 0 100 100">
+			<polyline class="line-cornered stroke-still" points="0,0 100,0 100,100" stroke-width="10" fill="none"></polyline>
+			<polyline class="line-cornered stroke-still" points="0,0 0,100 100,100" stroke-width="10" fill="none"></polyline>
+			<polyline class="line-cornered stroke-animation" points="0,0 100,0 100,100" stroke-width="10" fill="none"></polyline>
+			<polyline class="line-cornered stroke-animation" points="0,0 0,100 100,100" stroke-width="10" fill="none"></polyline>
+		</svg>
+	</div>
+  
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-3">
+		<div class="container-fluid">
+			<a class="navbar-brand" style="font-family: 'Raleway'; font-size:20px" href="#">CSM - Laboratórios</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarColor02">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+					  <a class="nav-link active" href="#">Integrantes
+						<span class="visually-hidden">(current)</span>
+					  </a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="#Projetos">Projetos</a>
+					</li>
+				</ul>
+
+			</div>
+			
+		</div>
+	</nav>
+	
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<script>
+		$(window).on("load",function(){
+			$(".loader-wrapper").delay(70).fadeOut("slow");
+		});
+	</script>
+	
+	<script>
+		AOS.init({
+		duration:1000,
+		once: 'true'
+		});
+	</script>
+
+	<div class="mt-5 p-5 text-center" style="background-image:url('https://atomusinvest.com.br/resources/Template 2.svg'); background-size:cover; background-position:center;">
+		<h1 class="fw-bold mt-4" data-aos="fade-right" data-aos-delay="350">Codificação de Sinais Multimídia - DA - 2021.3</h1>
+	</div>
+	
+	<div class="bg-black p-4 bg-opacity-25 text-white border-bottom border-5 border-primary">
+		<div class="mx-auto mt-1">
+			
+			<div class="container mt-2" style="width:fit-content;-moz-fit-content">
+				<h1 class="fw-normal text-center border-bottom border-2 border-primary p-1" data-aos="fade-right" data-aos-delay="350">Integrantes do Grupo</h1>
+			</div>
+			<div class="text-center row mt-5">
+				<div class="col">
+					<img src="https://raw.githubusercontent.com/JohnGarrido/ESTI019/main/lab_1/garrido.jpg" class="foto bg-white p-2 rounded-circle" width="300" height="300" data-aos="zoom-in" data-aos-delay="200">
+					<div class="text-center row mt-3">
+						<h2 data-aos="fade-right" data-aos-delay="300">Olá, Eu sou<br> João Vitor Garrido!<br></h2> 
+						<p class="lead" data-aos="fade-up" data-aos-delay="800">Estudante Eng. Informação - UFABC<img src="https://pbs.twimg.com/profile_images/1063331297/ufabc.jpg" class="rounded-circle bg-white mx-2" width="30" height="30"></img></p>
+						<p class="lead" data-aos="fade-up" data-aos-delay="800">RA: 11201811064</p>
+					</div>
+				</div>
+				<div class="col">
+					<img src="https://lh3.googleusercontent.com/ogw/ADea4I5jPV47ecHUuIrLHIYzPX2OtSkJ1hFKa7PrF_XIuQ=s1080-c-mo" class="foto bg-white p-2 rounded-circle" width="300" height="300" data-aos="zoom-in" data-aos-delay="200">
+					<div class="text-center row mt-3">
+						<h2 data-aos="fade-right" data-aos-delay="300">Olá, Eu sou<br> Gabriel de Oliveira Souza!<br></h2> 
+						<p class="lead" data-aos="fade-up" data-aos-delay="800">Estudante Eng. Informação - UFABC<img src="https://pbs.twimg.com/profile_images/1063331297/ufabc.jpg" class="rounded-circle bg-white mx-2" width="30" height="30"></img></p>
+						<p class="lead" data-aos="fade-up" data-aos-delay="800">RA: 11201811094</p>
+					</div>
+				</div>
+				<div class="col">
+					<img src="https://media-exp1.licdn.com/dms/image/C4D03AQG-yXfdisl4Aw/profile-displayphoto-shrink_800_800/0/1600489344647?e=1638403200&v=beta&t=BZjd2Sqn5Sp4B5fuWAyKFwANDAcZQLZlHeW-oEx7UmE" class="foto bg-white p-2 rounded-circle" width="300" height="300" data-aos="zoom-in" data-aos-delay="200">
+					<div class="text-center row mt-3">
+						<h2 data-aos="fade-right" data-aos-delay="300">Olá, Eu sou<br> Victor Gabriel Ferreira dos Santos!<br></h2> 
+						<p class="lead" data-aos="fade-up" data-aos-delay="800">Estudante Eng. Informação - UFABC<img src="https://pbs.twimg.com/profile_images/1063331297/ufabc.jpg" class="rounded-circle bg-white mx-2" width="30" height="30"></img></p>
+						<p class="lead" data-aos="fade-up" data-aos-delay="800">RA: 11201811459</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div  id="Projetos" class="bg-white py-5 bg-opacity-100 text-dark">
+		
+		<div class="container mt-5" style="width:fit-content;-moz-fit-content">
+			<h1 class="fw-normal text-center border-bottom border-2 border-primary p-1" data-aos="fade-up" data-aos-delay="100">Projetos</h1>
+		</div>
+		<h3 class="fw-bold text-center mt-5" data-aos="fade-up" data-aos-delay="200">Sumário para os laboratórios da disciplina!</h3>
+
+		<div class="container mx-auto mt-5 text-center">
+			<div class="card-group">
+				  <div class="card text-white bg-dark my-5 mx-2 border border-3" style="border-radius:15px" data-aos="zoom-in" data-aos-delay="200">
+						<img src="https://miro.medium.com/max/1200/1*tRhSEi8t5nXBDqejZSOdKQ.png" class="mx-auto mt-5" width="100%" height="300">
+						<div class="card-body">
+						  <h5 class="card-title mt-3">Laboratório 2 – Imagem e Captura de Vídeo</h5>
+						  <p class="card-text mt-4">• Iniciar os trabalhos com o Google Colab e o OpenCV<br>• Visualizar imagens e alterar a resolução delas<br>• Gravar um Vídeo e mostrá-lo no Colab</p>
+						</div>
+						<div class="card-footer">
+							<a target="_blank" class="nav-link text-white"href ="https://atomusinvest.com.br/"><i class="fa fa-globe"></i> Relatório 2</a>
+						</div>
+				  </div>
+				  <div class="card text-white bg-dark my-5 mx-2 border border-3" style="border-radius:15px" data-aos="zoom-in" data-aos-delay="500">
+					  <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png" class="mx-auto mt-5" width="100%" height="300">
+						<div class="card-body">
+						  <h5 class="card-title mt-3">Laboratório 3 - DCT para imagem e Animação</h5>
+						  <p class="card-text mt-4">Utilizar a DCT para codificação de Imagem e princípios de Animação com Blender/Maya</p>
+						</div>
+						<div class="card-footer">
+							<a target="_blank" class="nav-link text-white" href ="https://github.com/gabrielsouza-oss/IBOV_Polynomial_Aprox"><i class="fa fa-globe"></i> Relatório 3</a>
+						</div>
+				  </div>
+				  <div class="card text-white bg-dark my-5 mx-2 border border-3" style="border-radius:15px" data-aos="zoom-in" data-aos-delay="500">
+					  <img src="https://image.slidesharecdn.com/imagecompression-131204091956-phpapp01/95/image-compression-31-638.jpg?cb=1399687038" class="mx-auto mt-5" width="100%" height="300">
+						<div class="card-body">
+						  <h5 class="card-title mt-3">Laboratório 4 - Codificação de Imagem com DWT</h5>
+						  <p class="card-text mt-4">Codificação de Imagem usando Discrete Wavelet Transform</p>
+						</div>
+						<div class="card-footer">
+							<a target="_blank" class="nav-link text-white" href ="https://github.com/gabrielsouza-oss/IBOV_Polynomial_Aprox"><i class="fa fa-globe"></i> Relatório 4</a>
+						</div>
+				  </div>
+			  </div>
+		</div>
+
+	</div>
+	
+
+  </body>
+</html>
