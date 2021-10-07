@@ -34,8 +34,6 @@
 </nav>
 
 
-
-
 <style type="text/css">
     .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
 .highlight  { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
@@ -14012,7 +14010,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a target="_blank" href="https://colab.research.google.com/drive/1jlRoHEOexC6U7_x-BdgHBgnkcI-eQJSE?usp=sharing"><img src="https://colab.research.google.com/img/colab_favicon_256px.png" ></a></p>
+<p><a target="_blank" href="https://colab.research.google.com/drive/1za-LFZyqremuItWwqpfr-DZDqAjxdNLd?usp=sharing"><img src="https://colab.research.google.com/img/colab_favicon_256px.png" ></a></p>
 
 </div>
 </div>
@@ -14024,7 +14022,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -14049,14 +14047,22 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Lendo imagem e suas dimensões com biblioteca OpenCV2</p>
-<p>a função <code>.imread</code> le a imagem no formato BGR</p>
+<p>O primeiro passo para separar as camadas de cores das imagens, foi a Leitura da imagem e suas dimensões com biblioteca OpenCV2.</p>
+<ol>
+<li>A função <code>.imread</code> lê a imagem no formato BGR</li>
+</ol>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>O código utilizado e o resultado obtido, podem ser vistos abaixo:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bgr1</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;/content/messi.jpg&#39;</span><span class="p">)</span> <span class="c1"># leitura no formato BGR!</span>
@@ -14093,15 +14099,19 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Separa os canais e re-arranja para formar imagem RGB\
-A função <code>.split</code> permite que separemos as cores azul, verde e vermelho da imagem</p>
-<p>a função <code>.merge</code> re-arranja as cores para formar a imagem em RGB</p>
+<p>O segundo passo se trata de Separar os canais e re-arranjar, para formar uma imagem RGB:</p>
+<ol>
+<li><p>A função <code>.split</code> permite que separemos as cores azul, verde e vermelho da imagem</p>
+</li>
+<li><p>A função <code>.merge</code> re-arranja as cores para formar a imagem em RGB</p>
+</li>
+</ol>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">b1</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">r1</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">bgr1</span><span class="p">)</span>
@@ -14116,13 +14126,13 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Imprime cores trocadas (BGR) e reais (RGB)</p>
+<p>Terceiro passo: Imprime cores trocadas (BGR) e reais (RGB)</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
@@ -14143,7 +14153,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
 
 
@@ -14177,13 +14187,13 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Converte para os formatos YCrCb e HSV</p>
+<p>Quarto Passo: Converte para os formatos YCrCb e HSV</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ycrcb</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">bgr1</span><span class="p">,</span> <span class="n">cv</span><span class="o">.</span><span class="n">COLOR_BGR2YCrCb</span><span class="p">)</span>
@@ -14207,7 +14217,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
 
@@ -14241,14 +14251,14 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Separação das Camadas RGB individualmente</p>
+<p>Quinto Passo: Separação das Camadas RGB individualmente</p>
 <p>Manipulando as matrizes é possivel apagar a presença da cores não desejadas zerando suas respectivas colunas</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">imageR</span> <span class="o">=</span> <span class="n">rgb2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -14257,7 +14267,6 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 <span class="n">imageG</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">imageG</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">imageB</span> <span class="o">=</span> <span class="n">rgb2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">imageB</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>     
-<span class="c1"># Q2 - O que foi feito aqui?</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">131</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">imageR</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;RGB_Camada R&#39;</span><span class="p">)</span>
@@ -14278,7 +14287,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
 
@@ -14318,7 +14327,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y1</span><span class="p">,</span> <span class="n">cr1</span><span class="p">,</span> <span class="n">cb1</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">ycrcb</span><span class="p">)</span>
@@ -14352,7 +14361,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
@@ -14396,20 +14405,24 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>A função <code>cv.IMWRITE_JPEG_QUALITY</code> permite salvar e alterar a qualidade da imagem</li>
+</ol>
 <ul>
 <li><p>O formato JPEG permite compressão da imagem ao salvá-la num arquivo com o comando imwrite().</p>
 </li>
 <li><p>A compressão afeta a qualidade da imagem, sendo controlada pelo parâmetro IMWRITE_JPEG_QUALITY entre 0-100, sendo que quanto maior, melhor a qualidade. O default é 95.</p>
 </li>
 </ul>
-<p>A função <code>cv.IMWRITE_JPEG_QUALITY</code> permite salvar e alterar a qualidade da imagem</p>
-<p>Plotamos as imagens que criamos comprimida e convertida de bgr para rgb</p>
+<ol>
+<li>Plotamos as imagens que criamos comprimida e convertida de bgr para rgb</li>
+</ol>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Comprimir_perda</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
@@ -14443,7 +14456,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Comprimir_perda</span><span class="p">(</span><span class="s1">&#39;/content/Bieljpg.jpg&#39;</span><span class="p">)</span>
@@ -14487,7 +14500,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Comprimir_perda</span><span class="p">(</span><span class="s1">&#39;/content/jow.png&#39;</span><span class="p">)</span> 
@@ -14531,7 +14544,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Comprimir_perda</span><span class="p">(</span><span class="s1">&#39;/content/Vitao.png&#39;</span><span class="p">)</span>
@@ -14575,7 +14588,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Comprimir_perda</span><span class="p">(</span><span class="s1">&#39;/content/foto_grupo.jpg&#39;</span><span class="p">)</span> 
@@ -14625,13 +14638,13 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Nesta parte calculamos a DCT em bloco de 8x8 das imagens do grupo</p>
+<p>Nesta parte calculamos a DCT em bloco de 8x8 das imagens do grupo, através da função <code>DCT_8()</code></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">DCT_8</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">wid</span> <span class="o">=</span> <span class="p">[</span><span class="mi">280</span><span class="p">,</span><span class="mi">340</span><span class="p">],</span><span class="n">hei</span> <span class="o">=</span> <span class="p">[</span><span class="mi">330</span><span class="p">,</span><span class="mi">390</span><span class="p">]):</span>
@@ -14667,14 +14680,13 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Função para zerar as componentes AC da diagonal da DCT</p>
-<p>Zerando todas as posições da matriz abaixo da diagonal secundária.</p>
+<p>Posteriormente, zeramos todas as posições da matriz abaixo da diagonal secundária, através da Função abaixo para zerar as componentes AC da diagonal da DCT.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">zera_matriz</span><span class="p">(</span><span class="n">DCT_Float</span><span class="p">):</span>
@@ -14687,7 +14699,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
   <span class="n">dct8x8fz</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="n">dct8x8fz</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="n">dct8x8fz</span><span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">dct8x8fz</span><span class="p">,</span> <span class="n">decimals</span> <span class="o">=</span> <span class="mi">2</span><span class="p">))</span>
+  <span class="n">display</span><span class="p">(</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">dct8x8fz</span><span class="p">,</span> <span class="n">decimals</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)))</span>
   <span class="k">return</span> <span class="n">dct8x8fz</span>
 </pre></div>
 
@@ -14699,13 +14711,13 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Bloco Original e Reconstruído com Zeros das componentes AC da diagonal secundária para baixo zerados</p>
+<p>Finalmente, temos a Função que plota o Bloco Original e Reconstruído com Zeros, tendo as componentes AC da diagonal secundária para baixo zeradas.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plota_DCT</span><span class="p">(</span><span class="n">DCT_Zerado</span><span class="p">,</span><span class="n">og</span><span class="p">,</span><span class="n">original_name</span><span class="p">,</span><span class="n">output</span><span class="p">):</span>
@@ -14732,14 +14744,14 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Integrante_1_og</span><span class="p">,</span> <span class="n">Integrante_1_int</span><span class="p">,</span> <span class="n">Integrante_1_float</span>  <span class="o">=</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/Bieljpg.jpg&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/Bieljpg.jpg&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/Bieljpg.jpg&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
 
 <span class="n">Integrante_1_zero</span> <span class="o">=</span> <span class="n">zera_matriz</span><span class="p">(</span><span class="n">Integrante_1_float</span><span class="p">)</span>
 
-<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Integrante_1_zero</span><span class="p">,</span> <span class="n">Integrante_1_og</span><span class="p">,</span><span class="s2">&quot;Integrante1_original.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Integrante1_dct.jpg&quot;</span><span class="p">)</span>
+<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Integrante_1_zero</span><span class="p">,</span> <span class="n">Integrante_1_og</span><span class="p">,</span><span class="s2">&quot;Integrante1_original.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Integrante1_dct.jpg&quot;</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -14758,44 +14770,128 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[ 5.96  0.29 -0.13 -0.23  0.04  0.08  0.02  0.  ]
- [ 0.31  0.15  0.   -0.05 -0.07 -0.01  0.    0.  ]
- [-0.13  0.04 -0.1   0.09  0.04  0.    0.    0.  ]
- [-0.02  0.03  0.07  0.1   0.    0.    0.    0.  ]
- [-0.01 -0.    0.15  0.    0.    0.    0.    0.  ]
- [ 0.05 -0.03  0.    0.    0.    0.    0.    0.  ]
- [-0.01  0.    0.    0.    0.    0.    0.    0.  ]
- [ 0.    0.    0.    0.    0.    0.    0.    0.  ]]
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.96</td>
+      <td>0.29</td>
+      <td>-0.13</td>
+      <td>-0.23</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>0.02</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.31</td>
+      <td>0.15</td>
+      <td>0.00</td>
+      <td>-0.05</td>
+      <td>-0.07</td>
+      <td>-0.01</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.13</td>
+      <td>0.04</td>
+      <td>-0.10</td>
+      <td>0.09</td>
+      <td>0.04</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.02</td>
+      <td>0.03</td>
+      <td>0.07</td>
+      <td>0.10</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.01</td>
+      <td>-0.00</td>
+      <td>0.15</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.05</td>
+      <td>-0.03</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-0.01</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0.8702379 , 0.847816  , 0.8526172 , 0.81552655, 0.74230087,
-        0.71336347, 0.7019041 , 0.6800804 ],
-       [0.7746547 , 0.82534266, 0.90574104, 0.8846653 , 0.7750147 ,
-        0.70615375, 0.6786046 , 0.65616435],
-       [0.73161256, 0.82154137, 0.9336543 , 0.90387726, 0.7698237 ,
-        0.7063611 , 0.7173882 , 0.7297933 ],
-       [0.7812438 , 0.82844114, 0.8875694 , 0.8272645 , 0.702946  ,
-        0.68848026, 0.76177275, 0.8149097 ],
-       [0.79700303, 0.78911865, 0.80817914, 0.7592105 , 0.6660115 ,
-        0.66410744, 0.72745216, 0.766878  ],
-       [0.73565996, 0.71616346, 0.7644688 , 0.7806176 , 0.71844053,
-        0.6811413 , 0.68125135, 0.67879224],
-       [0.682121  , 0.6622454 , 0.7403119 , 0.7994812 , 0.7431682 ,
-        0.67576134, 0.6554371 , 0.6547399 ],
-       [0.6687011 , 0.6347848 , 0.70345694, 0.7561415 , 0.68492067,
-        0.61176914, 0.6174018 , 0.6519176 ]], dtype=float32)</pre>
 </div>
 
 </div>
@@ -14828,14 +14924,14 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Integrante_2_og</span><span class="p">,</span> <span class="n">Integrante_2_int</span><span class="p">,</span> <span class="n">Integrante_2_float</span>  <span class="o">=</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/jow.png&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/jow.png&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/jow.png&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
 
 <span class="n">Integrante_2_zero</span> <span class="o">=</span> <span class="n">zera_matriz</span><span class="p">(</span><span class="n">Integrante_2_float</span><span class="p">)</span>
 
-<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Integrante_2_zero</span><span class="p">,</span> <span class="n">Integrante_2_og</span><span class="p">,</span><span class="s2">&quot;Integrante2_original.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Integrante2_dct.jpg&quot;</span><span class="p">)</span>
+<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Integrante_2_zero</span><span class="p">,</span> <span class="n">Integrante_2_og</span><span class="p">,</span><span class="s2">&quot;Integrante2_original.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Integrante2_dct.jpg&quot;</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -14854,44 +14950,128 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[ 2.07 -0.11 -0.02 -0.02  0.01  0.01  0.    0.  ]
- [ 0.22 -0.02 -0.01 -0.04 -0.01  0.01  0.    0.  ]
- [ 0.01  0.04 -0.02  0.   -0.01  0.    0.    0.  ]
- [ 0.01  0.03  0.01  0.01  0.    0.    0.    0.  ]
- [-0.02 -0.01  0.01  0.    0.    0.    0.    0.  ]
- [-0.02 -0.02  0.    0.    0.    0.    0.    0.  ]
- [ 0.02  0.    0.    0.    0.    0.    0.    0.  ]
- [ 0.    0.    0.    0.    0.    0.    0.    0.  ]]
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.07</td>
+      <td>-0.11</td>
+      <td>-0.02</td>
+      <td>-0.02</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.22</td>
+      <td>-0.02</td>
+      <td>-0.01</td>
+      <td>-0.04</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.01</td>
+      <td>0.04</td>
+      <td>-0.02</td>
+      <td>0.00</td>
+      <td>-0.01</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.01</td>
+      <td>0.03</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.02</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.02</td>
+      <td>-0.02</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.02</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0.27122214, 0.28823727, 0.30629852, 0.30436572, 0.29325426,
-        0.29796833, 0.3089897 , 0.3099619 ],
-       [0.2605267 , 0.27915514, 0.30156472, 0.3046079 , 0.29403096,
-        0.29493055, 0.30419955, 0.30694768],
-       [0.23607366, 0.25245556, 0.27697766, 0.28868428, 0.2862706 ,
-        0.29094732, 0.3053022 , 0.31489524],
-       [0.2188827 , 0.22482595, 0.24088016, 0.25529462, 0.2609595 ,
-        0.27044234, 0.2886635 , 0.30316278],
-       [0.23722751, 0.23132312, 0.23475331, 0.24579012, 0.25287044,
-        0.25832942, 0.26862216, 0.27856073],
-       [0.24015917, 0.23091489, 0.23100592, 0.2431921 , 0.25247976,
-        0.25283563, 0.25194556, 0.25370386],
-       [0.21289204, 0.20630309, 0.20907125, 0.22446027, 0.23708259,
-        0.2368789 , 0.23139456, 0.2292873 ],
-       [0.21038347, 0.20524153, 0.20802775, 0.22222874, 0.23442818,
-        0.23418625, 0.22830863, 0.22591695]], dtype=float32)</pre>
 </div>
 
 </div>
@@ -14924,14 +15104,14 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Integrante_3_og</span><span class="p">,</span> <span class="n">Integrante_3_int</span><span class="p">,</span> <span class="n">Integrante_3_float</span>  <span class="o">=</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/Vitao.png&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/Vitao.png&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/Vitao.png&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
 
 <span class="n">Integrante_3_zero</span> <span class="o">=</span> <span class="n">zera_matriz</span><span class="p">(</span><span class="n">Integrante_3_float</span><span class="p">)</span>
 
-<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Integrante_3_zero</span><span class="p">,</span> <span class="n">Integrante_3_og</span><span class="p">,</span><span class="s2">&quot;Integrante3_original.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Integrante3_dct.jpg&quot;</span><span class="p">)</span>
+<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Integrante_3_zero</span><span class="p">,</span> <span class="n">Integrante_3_og</span><span class="p">,</span><span class="s2">&quot;Integrante3_original.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Integrante3_dct.jpg&quot;</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -14950,44 +15130,128 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[ 2.83 -0.31  0.05  0.03 -0.05 -0.   -0.03  0.  ]
- [ 0.23  0.18 -0.   -0.09 -0.02 -0.07  0.    0.  ]
- [-0.03 -0.04 -0.09 -0.06 -0.04  0.    0.    0.  ]
- [ 0.07 -0.26 -0.01  0.05  0.    0.    0.    0.  ]
- [-0.11  0.1   0.03  0.    0.    0.    0.    0.  ]
- [ 0.02 -0.02  0.    0.    0.    0.    0.    0.  ]
- [-0.02  0.    0.    0.    0.    0.    0.    0.  ]
- [ 0.    0.    0.    0.    0.    0.    0.    0.  ]]
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.83</td>
+      <td>-0.31</td>
+      <td>0.05</td>
+      <td>0.03</td>
+      <td>-0.05</td>
+      <td>-0.00</td>
+      <td>-0.03</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.23</td>
+      <td>0.18</td>
+      <td>-0.00</td>
+      <td>-0.09</td>
+      <td>-0.02</td>
+      <td>-0.07</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.03</td>
+      <td>-0.04</td>
+      <td>-0.09</td>
+      <td>-0.06</td>
+      <td>-0.04</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.07</td>
+      <td>-0.26</td>
+      <td>-0.01</td>
+      <td>0.05</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.11</td>
+      <td>0.10</td>
+      <td>0.03</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.02</td>
+      <td>-0.02</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-0.02</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0.2757005 , 0.37508875, 0.38397783, 0.36500564, 0.39681402,
-        0.41835374, 0.42845833, 0.44108647],
-       [0.33423525, 0.41387948, 0.41280937, 0.38756484, 0.39878768,
-        0.4011937 , 0.40741616, 0.4217562 ],
-       [0.38757202, 0.42261505, 0.39528242, 0.3641364 , 0.3605075 ,
-        0.35349557, 0.36388552, 0.3801753 ],
-       [0.39888355, 0.38220075, 0.33113718, 0.31291497, 0.32416826,
-        0.33544362, 0.35749546, 0.36674896],
-       [0.32989803, 0.2918847 , 0.25659317, 0.2846594 , 0.3395809 ,
-        0.3901472 , 0.42461964, 0.41480038],
-       [0.23818246, 0.2169791 , 0.2283465 , 0.30229956, 0.38671583,
-        0.46757594, 0.51094025, 0.48011333],
-       [0.22152992, 0.22087643, 0.25415188, 0.3160339 , 0.3674369 ,
-        0.43690208, 0.47698283, 0.4304034 ],
-       [0.24462348, 0.24782778, 0.2688775 , 0.2827992 , 0.27331975,
-        0.3088488 , 0.33728015, 0.28134924]], dtype=float32)</pre>
 </div>
 
 </div>
@@ -15015,19 +15279,19 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Montagem"><strong>Montagem</strong><a class="anchor-link" href="#Montagem">&#182;</a></h3>
+<h3 id="Montagem-Grupo"><strong>Montagem Grupo</strong><a class="anchor-link" href="#Montagem-Grupo">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Grupo_og</span><span class="p">,</span> <span class="n">Grupo_int</span><span class="p">,</span> <span class="n">Grupo_float</span>  <span class="o">=</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/foto_grupo.jpg&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/foto_grupo.jpg&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/foto_grupo.jpg&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
 
 <span class="n">Grupo_zero</span> <span class="o">=</span> <span class="n">zera_matriz</span><span class="p">(</span><span class="n">Grupo_float</span><span class="p">)</span>
 
-<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Grupo_zero</span><span class="p">,</span> <span class="n">Grupo_og</span><span class="p">,</span><span class="s2">&quot;Grupo_original.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Grupo_dct.jpg&quot;</span><span class="p">)</span>
+<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Grupo_zero</span><span class="p">,</span> <span class="n">Grupo_og</span><span class="p">,</span><span class="s2">&quot;Grupo_original.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Grupo_dct.jpg&quot;</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -15046,44 +15310,128 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[ 0.98  0.08  0.04  0.02  0.02  0.02  0.01  0.  ]
- [-0.   -0.01 -0.    0.01  0.02  0.01  0.    0.  ]
- [-0.01 -0.    0.01  0.01 -0.    0.    0.    0.  ]
- [ 0.    0.    0.    0.    0.    0.    0.    0.  ]
- [-0.02 -0.02  0.    0.    0.    0.    0.    0.  ]
- [-0.   -0.    0.    0.    0.    0.    0.    0.  ]
- [-0.    0.    0.    0.    0.    0.    0.    0.  ]
- [ 0.    0.    0.    0.    0.    0.    0.    0.  ]]
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.98</td>
+      <td>0.08</td>
+      <td>0.04</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>0.01</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.00</td>
+      <td>-0.01</td>
+      <td>-0.00</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>0.01</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.01</td>
+      <td>-0.00</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.02</td>
+      <td>-0.02</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0.14552775, 0.11385513, 0.10762067, 0.11441952, 0.11072122,
-        0.11219903, 0.11582825, 0.11304131],
-       [0.15696499, 0.12798136, 0.12222776, 0.12592007, 0.11736823,
-        0.11395697, 0.1152147 , 0.11286546],
-       [0.15296076, 0.1296798 , 0.12697738, 0.1294084 , 0.11837316,
-        0.11224877, 0.11304191, 0.11287513],
-       [0.14019571, 0.12320287, 0.1235965 , 0.12596324, 0.1162091 ,
-        0.11123648, 0.11327226, 0.11555642],
-       [0.14087813, 0.12742418, 0.126268  , 0.12498135, 0.11583089,
-        0.11196792, 0.1131999 , 0.11531493],
-       [0.1516064 , 0.13907248, 0.1327967 , 0.12537704, 0.11634931,
-        0.11374911, 0.11282595, 0.11265758],
-       [0.15222022, 0.14037526, 0.13038358, 0.11963113, 0.11374902,
-        0.11550972, 0.11474264, 0.11304541],
-       [0.14121884, 0.13034058, 0.11947525, 0.10875544, 0.10713879,
-        0.11390362, 0.1150406 , 0.11326686]], dtype=float32)</pre>
 </div>
 
 </div>
@@ -15116,13 +15464,14 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>As imagens comprimidadas foram armazenadas com menor quantidade de bytes do que as suas iniciais, demonstrando que o objetivo do laboratório foi cumprido.</p>
+<p>Podemos observar que as imagens comprimidadas foram armazenadas com menor quantidade de bytes do que as suas iniciais, demonstrando que o objetivo do laboratório foi cumprido.</p>
+<p>Abaixo temos a tabela comparativa, mostrando o percentual de compressão alcançado com a codificação DCT.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">original_size</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s2">&quot;Integrante1_original.jpg&quot;</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s2">&quot;Integrante2_original.jpg&quot;</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s2">&quot;Integrante3_original.jpg&quot;</span><span class="p">),</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s2">&quot;Grupo_original.jpg&quot;</span><span class="p">)]</span>
@@ -15149,7 +15498,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
 
 
@@ -15230,7 +15579,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">zera_matriz_2</span><span class="p">(</span><span class="n">DCT_Float</span><span class="p">):</span>
@@ -15249,7 +15598,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
   <span class="n">dct8x8fz</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="n">dct8x8fz</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="n">dct8x8fz</span><span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">dct8x8fz</span><span class="p">,</span> <span class="n">decimals</span> <span class="o">=</span> <span class="mi">2</span><span class="p">))</span>
+  <span class="n">display</span><span class="p">(</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">dct8x8fz</span><span class="p">,</span> <span class="n">decimals</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)))</span>
   <span class="k">return</span> <span class="n">dct8x8fz</span>
 </pre></div>
 
@@ -15266,14 +15615,14 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Integrante_1_og</span><span class="p">,</span> <span class="n">Integrante_1_int</span><span class="p">,</span> <span class="n">Integrante_1_float</span>  <span class="o">=</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/Bieljpg.jpg&quot;</span><span class="p">,[</span><span class="mi">110</span><span class="p">,</span><span class="mi">170</span><span class="p">],[</span><span class="mi">210</span><span class="p">,</span><span class="mi">270</span><span class="p">])[</span><span class="mi">0</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/Bieljpg.jpg&quot;</span><span class="p">,[</span><span class="mi">110</span><span class="p">,</span><span class="mi">170</span><span class="p">],[</span><span class="mi">210</span><span class="p">,</span><span class="mi">270</span><span class="p">])[</span><span class="mi">1</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/Bieljpg.jpg&quot;</span><span class="p">,[</span><span class="mi">110</span><span class="p">,</span><span class="mi">170</span><span class="p">],[</span><span class="mi">210</span><span class="p">,</span><span class="mi">270</span><span class="p">])[</span><span class="mi">2</span><span class="p">]</span>
 
 <span class="n">Integrante_1_zero</span> <span class="o">=</span> <span class="n">zera_matriz_2</span><span class="p">(</span><span class="n">Integrante_1_float</span><span class="p">)</span>
 
-<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Integrante_1_zero</span><span class="p">,</span> <span class="n">Integrante_1_og</span><span class="p">,</span><span class="s2">&quot;Integrante1_original_2.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Integrante1_dct_2.jpg&quot;</span><span class="p">)</span>
+<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Integrante_1_zero</span><span class="p">,</span> <span class="n">Integrante_1_og</span><span class="p">,</span><span class="s2">&quot;Integrante1_original_2.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Integrante1_dct_2.jpg&quot;</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -15292,44 +15641,128 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[ 6.7   0.    0.    0.    0.    0.    0.    0.  ]
- [-0.03  0.    0.    0.    0.    0.    0.    0.  ]
- [ 0.    0.    0.    0.    0.    0.    0.    0.  ]
- [-0.    0.    0.    0.    0.    0.    0.    0.  ]
- [ 0.    0.    0.    0.    0.    0.    0.    0.  ]
- [-0.01  0.    0.    0.    0.    0.    0.    0.  ]
- [ 0.    0.    0.    0.    0.    0.    0.    0.  ]
- [ 0.    0.    0.    0.    0.    0.    0.    0.  ]]
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6.70</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.03</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.01</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0.8313497 , 0.8313497 , 0.8313497 , 0.8313497 , 0.8313497 ,
-        0.8313497 , 0.8313497 , 0.8313497 ],
-       [0.8353593 , 0.8353593 , 0.8353593 , 0.8353593 , 0.8353593 ,
-        0.8353593 , 0.8353593 , 0.8353593 ],
-       [0.8351966 , 0.8351966 , 0.8351966 , 0.8351966 , 0.8351966 ,
-        0.8351966 , 0.8351966 , 0.8351966 ],
-       [0.8354091 , 0.8354091 , 0.8354091 , 0.8354091 , 0.8354091 ,
-        0.8354091 , 0.8354091 , 0.8354091 ],
-       [0.83910066, 0.83910066, 0.83910066, 0.83910066, 0.83910066,
-        0.83910066, 0.83910066, 0.83910066],
-       [0.83931315, 0.83931315, 0.83931315, 0.83931315, 0.83931315,
-        0.83931315, 0.83931315, 0.83931315],
-       [0.8391505 , 0.8391505 , 0.8391505 , 0.8391505 , 0.8391505 ,
-        0.8391505 , 0.8391505 , 0.8391505 ],
-       [0.8431601 , 0.8431601 , 0.8431601 , 0.8431601 , 0.8431601 ,
-        0.8431601 , 0.8431601 , 0.8431601 ]], dtype=float32)</pre>
 </div>
 
 </div>
@@ -15362,14 +15795,14 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Integrante_2_og</span><span class="p">,</span> <span class="n">Integrante_2_int</span><span class="p">,</span> <span class="n">Integrante_2_float</span>  <span class="o">=</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/jow.png&quot;</span><span class="p">,[</span><span class="mi">110</span><span class="p">,</span><span class="mi">170</span><span class="p">],[</span><span class="mi">210</span><span class="p">,</span><span class="mi">270</span><span class="p">])[</span><span class="mi">0</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/jow.png&quot;</span><span class="p">,[</span><span class="mi">110</span><span class="p">,</span><span class="mi">170</span><span class="p">],[</span><span class="mi">210</span><span class="p">,</span><span class="mi">270</span><span class="p">])[</span><span class="mi">1</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/jow.png&quot;</span><span class="p">,[</span><span class="mi">110</span><span class="p">,</span><span class="mi">170</span><span class="p">],[</span><span class="mi">210</span><span class="p">,</span><span class="mi">270</span><span class="p">])[</span><span class="mi">2</span><span class="p">]</span>
 
 <span class="n">Integrante_2_zero</span> <span class="o">=</span> <span class="n">zera_matriz_2</span><span class="p">(</span><span class="n">Integrante_2_float</span><span class="p">)</span>
 
-<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Integrante_2_zero</span><span class="p">,</span> <span class="n">Integrante_2_og</span><span class="p">,</span><span class="s2">&quot;Integrante2_original_2.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Integrante2_dct_2.jpg&quot;</span><span class="p">)</span>
+<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Integrante_2_zero</span><span class="p">,</span> <span class="n">Integrante_2_og</span><span class="p">,</span><span class="s2">&quot;Integrante2_original_2.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Integrante2_dct_2.jpg&quot;</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -15388,44 +15821,128 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[ 5.16  0.    0.   -0.01  0.01 -0.    0.    0.  ]
- [ 0.01 -0.01  0.    0.   -0.    0.    0.    0.  ]
- [ 0.01  0.01  0.01  0.    0.    0.    0.    0.  ]
- [ 0.01  0.01 -0.01 -0.01  0.    0.    0.    0.  ]
- [ 0.   -0.   -0.    0.    0.    0.    0.    0.  ]
- [ 0.    0.    0.    0.    0.    0.    0.    0.  ]
- [-0.    0.    0.    0.    0.    0.    0.    0.  ]
- [ 0.    0.    0.    0.    0.    0.    0.    0.  ]]
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.16</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.01</td>
+      <td>0.01</td>
+      <td>-0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>-0.01</td>
+      <td>-0.01</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0.65008336, 0.65098566, 0.6526087 , 0.65182936, 0.64774626,
-        0.64442503, 0.6464382 , 0.65148413],
-       [0.64566183, 0.6443966 , 0.6446596 , 0.6458613 , 0.6459427 ,
-        0.64539427, 0.647186  , 0.650883  ],
-       [0.6409263 , 0.6384311 , 0.63813263, 0.6411511 , 0.64435315,
-        0.64535165, 0.646236  , 0.64848334],
-       [0.6387085 , 0.63834465, 0.640151  , 0.6436684 , 0.6457522 ,
-        0.6450069 , 0.6448702 , 0.64707124],
-       [0.6387061 , 0.6417787 , 0.6463276 , 0.64888406, 0.64721704,
-        0.6431676 , 0.64250964, 0.6458744 ],
-       [0.64271265, 0.64606154, 0.6498627 , 0.65031636, 0.64615095,
-        0.64040995, 0.6396319 , 0.6437494 ],
-       [0.64849305, 0.6480699 , 0.64742607, 0.6462131 , 0.6434294 ,
-        0.63950545, 0.6392444 , 0.6431233 ],
-       [0.6505205 , 0.64618963, 0.64154583, 0.63998973, 0.6402913 ,
-        0.63946986, 0.640101  , 0.64354503]], dtype=float32)</pre>
 </div>
 
 </div>
@@ -15458,14 +15975,14 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Integrante_3_og</span><span class="p">,</span> <span class="n">Integrante_3_int</span><span class="p">,</span> <span class="n">Integrante_3_float</span>  <span class="o">=</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/Vitao.png&quot;</span><span class="p">,[</span><span class="mi">110</span><span class="p">,</span><span class="mi">170</span><span class="p">],[</span><span class="mi">210</span><span class="p">,</span><span class="mi">270</span><span class="p">])[</span><span class="mi">0</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/Vitao.png&quot;</span><span class="p">,[</span><span class="mi">110</span><span class="p">,</span><span class="mi">170</span><span class="p">],[</span><span class="mi">210</span><span class="p">,</span><span class="mi">270</span><span class="p">])[</span><span class="mi">1</span><span class="p">],</span> <span class="n">DCT_8</span><span class="p">(</span><span class="s2">&quot;/content/Vitao.png&quot;</span><span class="p">,[</span><span class="mi">110</span><span class="p">,</span><span class="mi">170</span><span class="p">],[</span><span class="mi">210</span><span class="p">,</span><span class="mi">270</span><span class="p">])[</span><span class="mi">2</span><span class="p">]</span>
 
 <span class="n">Integrante_3_zero</span> <span class="o">=</span> <span class="n">zera_matriz_2</span><span class="p">(</span><span class="n">Integrante_3_float</span><span class="p">)</span>
 
-<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Integrante_3_zero</span><span class="p">,</span> <span class="n">Integrante_3_og</span><span class="p">,</span><span class="s2">&quot;Integrante3_original_2.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Integrante3_dct_2.jpg&quot;</span><span class="p">)</span>
+<span class="n">plota_DCT</span><span class="p">(</span><span class="n">Integrante_3_zero</span><span class="p">,</span> <span class="n">Integrante_3_og</span><span class="p">,</span><span class="s2">&quot;Integrante3_original_2.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;Integrante3_dct_2.jpg&quot;</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -15484,44 +16001,128 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[ 2.66  0.    0.   -0.    0.   -0.    0.    0.  ]
- [ 0.26 -0.02  0.    0.    0.   -0.    0.    0.  ]
- [-0.17 -0.01  0.    0.    0.    0.    0.    0.  ]
- [-0.11  0.01  0.02 -0.01  0.    0.    0.    0.  ]
- [ 0.01 -0.04 -0.01  0.    0.    0.    0.    0.  ]
- [-0.   -0.    0.    0.    0.    0.    0.    0.  ]
- [-0.    0.    0.    0.    0.    0.    0.    0.  ]
- [ 0.    0.    0.    0.    0.    0.    0.    0.  ]]
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.66</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.00</td>
+      <td>0.0</td>
+      <td>-0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.26</td>
+      <td>-0.02</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>-0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.17</td>
+      <td>-0.01</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.11</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>-0.01</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.01</td>
+      <td>-0.04</td>
+      <td>-0.01</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.00</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0.32283628, 0.32672432, 0.32828003, 0.3300382 , 0.33532017,
-        0.33866778, 0.3424649 , 0.34994343],
-       [0.363179  , 0.3638174 , 0.3616133 , 0.36034012, 0.36261803,
-        0.36211538, 0.36088482, 0.36413953],
-       [0.3874081 , 0.38821644, 0.3879559 , 0.3890871 , 0.39206046,
-        0.39017066, 0.38531858, 0.3846645 ],
-       [0.37085238, 0.37413973, 0.37858593, 0.38348958, 0.38810727,
-        0.38799635, 0.38476643, 0.3842226 ],
-       [0.34129873, 0.34226644, 0.34306437, 0.34237757, 0.3418217 ,
-        0.34174493, 0.34253386, 0.3448889 ],
-       [0.31745598, 0.31333983, 0.3067152 , 0.29756108, 0.29000795,
-        0.28798208, 0.29030132, 0.2937155 ],
-       [0.29097453, 0.28750908, 0.28376046, 0.27831513, 0.27297914,
-        0.27107352, 0.27099076, 0.27118006],
-       [0.26677328, 0.26830104, 0.2742406 , 0.27984822, 0.28230172,
-        0.28240564, 0.2791119 , 0.2750955 ]], dtype=float32)</pre>
 </div>
 
 </div>
@@ -15676,7 +16277,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;audio controls&gt;&lt;source src=&quot;https://github.com/gabrielsouza-oss/CSM/blob/main/labs/audio_desc_lab3.mp3?raw=true&quot; type=&quot;audio/ogg&quot;&gt;&lt;/audio&gt;&#39;</span><span class="p">)</span>
@@ -15695,7 +16296,7 @@ A função <code>.split</code> permite que separemos as cores azul, verde e verm
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
 
 
 
